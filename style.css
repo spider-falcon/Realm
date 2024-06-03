@@ -75,6 +75,9 @@ div.userSafetyGuidelines{
   margin: 0px 5px;
 }
 
+center.middle{
+  align-items: initial;
+}
 button#loginButton{
   padding: 5px;
   background: rgba(255, 0, 98, 1);
