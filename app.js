@@ -1,7 +1,3 @@
-document.getElementById('click-me').addEventListener('click', () => {
-    alert('Button clicked!');
-  });
-  
   // Register the service worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
