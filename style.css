@@ -45,6 +45,10 @@ fieldset{
   border-radius: 2px;
 }legend{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgba(245, 245, 245, 0.6);
+  font-size: smaller;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 
