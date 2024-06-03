@@ -26,6 +26,8 @@ html{
   text-align: center;
 }p{
   color: white;
+}ol,li{
+  text-align: left;
 }
 
 
