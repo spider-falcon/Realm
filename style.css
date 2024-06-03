@@ -43,6 +43,8 @@ html{
 fieldset{
   border: 2px solid rgba(255, 192, 203, 0.3);
   border-radius: 2px;
+}legend{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -71,4 +73,11 @@ div.userSafetyGuidelines{
   border: 2px solid rgba(255, 192, 203, 0.7);
   border-radius: 5px;
   margin: 0px 5px;
+}
+
+button#loginButton{
+  padding: 5px;
+  background: rgba(255, 0, 98, 1);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;  
 }
