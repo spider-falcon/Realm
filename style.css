@@ -77,10 +77,13 @@ div.userSafetyGuidelines{
 
 center.middle{
   align-items: initial;
+  width: 80%;
 }
 button#loginButton{
   padding: 5px;
-  background: rgba(255, 0, 98, 1);
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bolder;  
+  background: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black; 
+  border: none;
+  border-radius: 2px;
 }
