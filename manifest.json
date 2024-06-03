@@ -1,14 +1,14 @@
 {
-    "name": "My PWA",
-    "short_name": "PWA",
-    "description": "A simple Progressive Web App example.",
+    "name": "REALM",
+    "short_name": "REALM",
+    "description": "We want people to share their honest feelings and opinions with their followers.",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
     "icons": [
       {
-        "src": "logo.png",
+        "src": "icon/logo.png",
         "sizes": "192x192",
         "type": "image/png"
       }
