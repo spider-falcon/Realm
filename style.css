@@ -9,14 +9,18 @@ html{
   width: 100%;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(14deg,rgb(250, 49, 83),rgb(255, 32, 69) 5%,rgb(247, 0, 41));
+  background: linear-gradient(14deg,rgb(250, 49, 83),rgb(255, 32, 69),rgb(247, 0, 41));
 }h1{
   font-weight: 900;
-  font-size: xx-large;
+  font-size: 100px;
   color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }h3{
   font-weight: 800;
   color: white;
+}div{
+  padding: 10px;
+  text-align: center;
 }
 
 
