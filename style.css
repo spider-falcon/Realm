@@ -17,7 +17,7 @@ html{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }h2{
   font-weight: 900;
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }h3{
@@ -36,6 +36,8 @@ html{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }ol,li{
   text-align: left;
+  color: white;
+
 }
 
 
@@ -63,4 +65,5 @@ div.userSafetyGuidelines{
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 192, 203, 0.7);
   border-radius: 5px;
+  margin: 0px 5px;
 }
