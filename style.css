@@ -10,13 +10,28 @@ html{
   padding: 0px;
   margin: 0px;
   background: linear-gradient(14deg,rgb(250, 49, 83),rgb(255, 32, 69) 5%,rgb(247, 0, 41));
+}h1{
+  font-size: large;
+  font-weight: 900;
+}h3{
+  font-size: large;
+  font-weight: 800;
 }
+
+
 div.topBar{
   display: flex;
   padding: 1px;
   background: rgba(245, 245, 245, 0.9);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 10px;
+  margin: 2px;
+}
+div.topBar button{
+  margin: auto;
+  background: none;
+  outline: none;
+  border: none;
 }
 div.topBar img{
   margin: auto;
