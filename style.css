@@ -1,19 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #357ae8;
-  }
-  
+html{
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(14deg,rgb(250, 49, 83),rgb(255, 32, 69) 5%,rgb(247, 0, 41));
+}
