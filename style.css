@@ -49,7 +49,7 @@ div.topBar{
   border-radius: 10px;
   margin: 2px;
 }
-div.topBar button{
+div.topBar button,div.topBar a{
   margin: auto;
   background: none;
   outline: none;
