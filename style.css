@@ -25,7 +25,10 @@ html{
   padding: 10px;
   text-align: center;
 }p{
+  padding: inherit 10px;
   color: white;
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }ol,li{
   text-align: left;
 }
