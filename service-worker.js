@@ -1,11 +1,11 @@
-const CACHE_NAME = 'my-pwa-cache-v1';
+const CACHE_NAME = 'REALM 0.1 Alpha';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/app.js',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  'icon',
+  'icon/Realm_transparent2.png'
 ];
 
 self.addEventListener('install', event => {
