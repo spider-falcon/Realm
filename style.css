@@ -30,7 +30,7 @@ html{
   padding: 10px;
   text-align: center;
 }p{
-  padding: inherit 10px;
+  padding: 15px;
   color: white;
   font-size: larger;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -57,4 +57,10 @@ div.topBar button{
 }
 div.topBar img{
   margin: auto;
+}
+div.userSafetyGuidelines{
+  background: rgba(255, 192, 203, 0.5);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 192, 203, 0.7);
+  border-radius: 5px;
 }
