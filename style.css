@@ -7,7 +7,6 @@ html{
 }body{
   height: 100%;
   width: 100%;
-  display: flex;
   padding: 0px;
   margin: 0px;
   background: linear-gradient(14deg,rgb(250, 49, 83),rgb(255, 32, 69) 5%,rgb(247, 0, 41));
