@@ -62,6 +62,8 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     } else {
         event.preventDefault();
         console.log("Ready to submit");
+        document.getElementById('registerForm').action = "https://spyderfalcon.42web.io/new/register";
+        document.getElementById('registerForm').submit();
     }
 });
     </script>
