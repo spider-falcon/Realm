@@ -34,14 +34,14 @@
         const formLogin = document.getElementById("passwordLoginHidden");
 
         function loginFun() {
-            if (username.length >0 && username.length<100 && password.length>8 && password.length<100) {
-            usernameH.value = username;
-            passwordH.value = password;
+            if (username.value.length >0 && username.value.length<100 && password.value.length>8 && password.value.length<100) {
+            usernameH.value = username.value;
+            passwordH.value = password.value;
             formLogin.action = "https://spyderfalcon.42web.io/new/user";
             formLogin.submit();
         } else {
             password.value =null;
-            password.Placeholder = "Invalid";
+            password.ariaPlaceholder = "Invalid";
         }
         }
     </script>
