@@ -33,17 +33,18 @@
         localStorage.setItem('user', user);
         localStorage.setItem('queryString', queryString);
         localStorage.setItem('theme', theme);
-        window.location.search =  "https://spyderfalcon.netlify.app/user?@"+queryString;
+        window.location.search =  "https://spyderfalcon.netlify.app/user?@"+user;
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
         if (localStorage.getItem('queryString') !=null && localStorage.getItem('theme') != null && localStorage.getItem('user') !=null && localStorage.getItem('user').length > 3) {
             urlField.value = localStorage.getItem('user');
-            if (msg.length>0 && msg.length<800) {
+            if (msg.value.length > 0 && msg.value.length < 800) {
                 messageForm.action = "https://spyderfalcon.42web.io/new/updatemessage"
+                messageForm.submit();
             }
         }
-    })
+    });
 </script>
 </body>
 </html>
