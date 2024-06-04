@@ -84,6 +84,7 @@ input{
   background: rgba(75, 75, 75, 0.09);
   border: 1px solid rgba(128, 128, 128, 0.08);
   outline: none;
+  border-radius: 15px;
   font-family: Arial, Helvetica, sans-serif;
   backdrop-filter: blur(15px);
   font-size: xx-large;
@@ -161,7 +162,7 @@ div.message{
 }div.message button{
   background: rgb(255, 0, 85);
   color: white;
-  border-radius: 15px;
+  border-radius: 13px;
   padding: 10px 15px;
   border: none;
   font-weight: bold;
