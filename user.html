@@ -11,7 +11,7 @@
     <div>
         <p id="username">Username</p>
         <p>send me anonymous messages!</p>
-        <form id="messageForm" method="GET" action="https://spyderfalcon.42web.io/new/updatemessage">
+        <form id="messageForm" method="GET" action="">
             <textarea name="msg" id="msg"></textarea>
             <input type="hidden" name="username" id="usernameField">
             <input type="hidden" name="user" id="userField">
@@ -20,18 +20,29 @@
         </form>
     </div>
     <script>
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const user = urlParams.get('user');
-const theme = urlParams.get('theme');
-const username = document.getElementById("username");
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const user = urlParams.get('user');
+    const theme = urlParams.get('theme');
+    const username = document.getElementById("username");
+    const messageForm = document.getElementById("messageForm");
+    const urlField = document.getElementById("urlField");
+    const msg = document.getElementById("msg");
 
-// Save the values in localStorage if user is not null and length > 3
-if (user !== null && user.length > 3) {
-    localStorage.setItem('user', user);
-    localStorage.setItem('queryString', queryString);
-    localStorage.setItem('theme', theme);
-}
+    if (user !== null && user.length > 3 && theme !== null && theme.length > 3 ) {
+        localStorage.setItem('user', user);
+        localStorage.setItem('queryString', queryString);
+        localStorage.setItem('theme', theme);
+    }
+    messageForm.addEventListener('submit',function (event) {
+        event.preventDefault();
+        if (localStorage.getItem('queryString') !=null && localStorage.getItem('theme') != null && localStorage.getItem('user') !=null && localStorage.getItem('user').length > 3) {
+            urlField.value = localStorage.getItem('user');
+            if (msg.length>0 && msg.length<800) {
+                messageForm.action = "https://spyderfalcon.42web.io/new/updatemessage"
+            }
+        }
+    })
 </script>
 </body>
 </html>
