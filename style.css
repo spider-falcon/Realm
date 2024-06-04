@@ -158,8 +158,10 @@ div.message{
   font-family: sans-serif;
   font-size: x-large;
 }div.message button{
-  background: orchid;
+  background: rgb(255, 0, 85);
+  color: white;
   border-radius: 15px;
   padding: 10px 15px;
   border: none;
+  font-weight: bold;
 }
