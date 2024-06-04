@@ -29,7 +29,7 @@
     const urlField = document.getElementById("urlField");
     const userField = document.getElementById("userField");
     const msg = document.getElementById("msg");
-    const usernameDiv = document.getElementById("username");
+    const usernameField = document.getElementById("usernameField");
 
     if (user !== null && user.length > 3 && theme !== null && theme.length > 3 ) {
         localStorage.setItem('user', user);
@@ -38,13 +38,14 @@
         window.location.search = user;
     }
     if (localStorage.getItem('user', user).length > 3) {
-        usernameDiv.innerText = localStorage.getItem('user', user);
+        username.innerText = localStorage.getItem('user', user);
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
         if (localStorage.getItem('queryString') !=null && localStorage.getItem('theme') != null && localStorage.getItem('user') !=null && localStorage.getItem('user').length > 3) {
             urlField.value = localStorage.getItem('queryString');
             userField.value = localStorage.getItem('user');
+            usernameField.value = localStorage.getItem('user');
             if (msg.value.length > 0 && msg.value.length < 800) {
                 messageForm.action = "https://spyderfalcon.42web.io/new/updatemessage"
                 messageForm.submit();
