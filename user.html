@@ -26,51 +26,12 @@ const user = urlParams.get('user');
 const theme = urlParams.get('theme');
 const username = document.getElementById("username");
 
-// Retrieve the existing saved user and query string from localStorage
-const savedUser = localStorage.getItem('user');
-const savedQuery = localStorage.getItem('queryString');
-
-// Save the current query string in localStorage if not already saved
-if (!savedQuery) {
+// Save the values in localStorage if user is not null and length > 3
+if (user !== null && user.length > 3) {
+    localStorage.setItem('user', user);
     localStorage.setItem('queryString', queryString);
+    localStorage.setItem('theme', theme);
 }
-
-// Use saved query string if current parameters are missing
-const finalQuery = queryString || savedQuery || '';
-const finalParams = new URLSearchParams(finalQuery);
-const finalUser = finalParams.get('user') || user;
-const finalTheme = finalParams.get('theme') || theme;
-
-// Set document title and username element if user exists in localStorage or finalUser
-if (savedUser) {
-    document.title = savedUser;
-    username.innerText = savedUser;
-} else if (finalUser) {
-    document.title = finalUser;
-    username.innerText = finalUser;
-}
-
-// Set hidden input values before form submission
-const form = document.getElementById("messageForm");
-const usernameField = document.getElementById("usernameField");
-const userField = document.getElementById("userField");
-const urlField = document.getElementById("urlField");
-
-if (finalUser) {
-    usernameField.value = finalUser;
-    userField.value = finalUser;
-}
-
-// Set the URL field to the saved or current query string
-urlField.value = finalQuery;
-
-form.addEventListener("submit", function(event) {
-    const msg = document.getElementById("msg").value;
-    if (msg.trim() === "") {
-        event.preventDefault();
-        alert("Message cannot be empty");
-    }
-});
-    </script>
+</script>
 </body>
 </html>
