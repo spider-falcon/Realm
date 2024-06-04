@@ -120,3 +120,14 @@ div.gender{
   display: flex;
   text-align: left;
 }
+
+div.message{
+  border: 1px solid rgba(245, 245, 245, 0.8);
+  border-radius: 8px;
+}div.message p{
+  padding: 1px 2px 1px 5px;
+  margin: 1px;
+  text-align: left;
+  background: whitesmoke;
+  color: black;
+}

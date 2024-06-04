@@ -8,9 +8,9 @@
     <title>LOGIN</title>
 </head>
 <body>
-    <div>
+    <div class="message">
         <p id="username">Username</p>
-        <p>send me anonymous messages!</p>
+        <p><strong>send me anonymous messages!</strong></p>
         <form id="messageForm" method="GET" action="">
             <textarea name="msg" id="msg"></textarea>
             <input type="hidden" name="username" id="usernameField">
@@ -38,7 +38,7 @@
         window.location.search = user;
     }
     if (localStorage.getItem('user', user).length > 3) {
-        username.innerText = localStorage.getItem('user', user);
+        username.innerText = "@"+localStorage.getItem('user', user);
         document.title = localStorage.getItem('user', user);
     }
     messageForm.addEventListener('submit',function (event) {
