@@ -3,22 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="icon/Realm_transparent2.png" type="image/x-icon">
+    <title>LOGIN</title>
 </head>
 <body>
-    <script>
-    fetch('https://spyderfalcon.42web.io/new/profile')
-    .then(response => response.text())
-    .then(data => {
-        // Use the data
-        console.log(data);
-    })
-    .catch(error => {
-        // Handle the error
-        console.error('Error:', error);
-    });
+    <center class="middle">
+        <h1 align="left">REALM</h1>
+        <fieldset>
+            <legend>Username</legend>
+            <input type="text" name="usernameLogin" id="usernameLogin">
+        </fieldset>
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" name="passwordLogin" id="passwordLogin">
+        </fieldset>
+        <p align="right">
+            <button id="loginButton" onclick="loginFun()">LOGIN</button>
+        </p>
+    </center>
+    <form action="no" method="get" id="formLogin">
+        <input type="hidden" value="null" name="usernameLoginHidden" id="usernameLoginHidden">
+        <input type="hidden" value="null" name="passwordLoginHidden" id="passwordLoginHidden">
+    </form>
+    <script defer>
+        const username = document.getElementById("usernameLogin");
+        const password = document.getElementById("passwordLogin");
+        const usernameH = document.getElementById("usernameLoginHidden");
+        const passwordH = document.getElementById("passwordLoginHidden");
+        const formLogin = document.getElementById("formLogin");
+
+        function loginFun() {
+            if (username.value.length > 0 && username.value.length < 100 && password.value.length > 8 && password.value.length < 100) {
+                usernameH.value = username.value;
+                passwordH.value = password.value;
+                formLogin.action = "https://spyderfalcon.42web.io/new/user";
+                formLogin.submit();
+            } else {
+                password.value = null;
+                password.placeholder = "Invalid";
+            }
+        }
     </script>
 </body>
 </html>
