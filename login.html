@@ -22,5 +22,26 @@
             <button id="loginButton">LOGIN</button>
         </p>
     </center>
+    <form action="no" method="post" id="formLogin">
+        <input type="hidden" value="null" name="usernameLoginHidden" id="usernameLoginHidden">
+        <input type="hidden" value="null" name="passwordLoginHidden" id="passwordLoginHidden">
+    </form>
+    <script defer>
+        const username = document.getElementById("usernameLogin");
+        const password = document.getElementById("passwordLogin");
+        const usernameH = document.getElementById("usernameLoginHidden");
+        const passwordH = document.getElementById("passwordLoginHidden");
+        const formLogin = document.getElementById("passwordLoginHidden");
+
+        if (username.length >0 && username.length<100 && password.length>8 && password.length<100) {
+            usernameH.value = username;
+            passwordH.value = password;
+            formLogin.action = "https://spyderfalcon.42web.io/new/user";
+            formLogin.submit();
+        } else {
+            password.value =null;
+            password.Placeholder = "Invalid";
+        }
+    </script>
 </body>
 </html>
