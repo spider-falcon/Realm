@@ -13,5 +13,12 @@
         <p>send me anonymous messages!</p>
         <textarea name="" id=""></textarea>
     </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const user = urlParams.get('user');
+        const theme = urlParams.get('theme');
+        console.log(user,theme); 
+    </script>
 </body>
 </html>
