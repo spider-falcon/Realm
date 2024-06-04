@@ -9,20 +9,52 @@
 </head>
 <body>
     <div>
-        <p>Username</p>
+        <p id="username">Username</p>
         <p>send me anonymous messages!</p>
         <textarea name="msg" id="msg"></textarea>
+
+        <button>SENT</button>
     </div>
     <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const user = urlParams.get('user');
-        const theme = urlParams.get('theme');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const user = urlParams.get('user');
+const theme = urlParams.get('theme');
+const username = document.getElementById("username");
 
-        if (user != null && theme != null && user.length > 2 && user.length < 100) {
-            console.log(user, theme); 
-            window.location = "https://spyderfalcon.netlify.app/user?@" + user;
-        }
+// Retrieve the existing saved user from localStorage
+const savedUser = localStorage.getItem('user');
+
+// Check if user and theme parameters are valid
+if (user != null && theme != null && user.length > 2 && user.length < 100) {
+    // Check if the new user is different from the saved user
+    if (savedUser !== user) {
+        // Save the new user in localStorage
+        localStorage.setItem('user', user);
+        console.log(user, theme); 
+        window.location = "https://spyderfalcon.netlify.app/user?@" + user;
+    }
+}
+
+// Set document title and username element if user exists in localStorage
+if (savedUser) {
+    document.title = savedUser;
+    username.innerText = savedUser;
+} else if (user) {
+    document.title = user;
+    username.innerText = user;
+}
+
+function showHint() {
+    const msg = document.getElementById("msg");
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        document.getElementById("msg").innerHTML = this.responseText;
+    }
+    xmlhttp.open("GET", "https://spyderfalcon.42web.io/new/updatemessage?msg=" + msg.value + "&username=" + user + "&user=" + user);
+    xmlhttp.send();
+}
+
     </script>
 </body>
 </html>
