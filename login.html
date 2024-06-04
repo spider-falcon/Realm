@@ -22,39 +22,26 @@
             <button id="loginButton" onclick="loginFun()">LOGIN</button>
         </p>
     </center>
+    <form action="no" method="get" id="formLogin">
+        <input type="hidden" value="null" name="usernameLoginHidden" id="usernameLoginHidden">
+        <input type="hidden" value="null" name="passwordLoginHidden" id="passwordLoginHidden">
+    </form>
     <script defer>
-        async function loginFun() {
-            const username = document.getElementById("usernameLogin").value;
-            const password = document.getElementById("passwordLogin").value;
+        const username = document.getElementById("usernameLogin");
+        const password = document.getElementById("passwordLogin");
+        const usernameH = document.getElementById("usernameLoginHidden");
+        const passwordH = document.getElementById("passwordLoginHidden");
+        const formLogin = document.getElementById("formLogin");
 
-            if (username.length > 0 && username.length < 100 && password.length > 8 && password.length < 100) {
-                const data = {
-                    usernameLogin: username,
-                    passwordLogin: password
-                };
-
-                try {
-                    const response = await fetch("https://spyderfalcon.42web.io/new/user", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(data)
-                    });
-
-                    if (response.ok) {
-                        // Handle success response
-                        console.log("Login successful");
-                    } else {
-                        // Handle error response
-                        console.log("Login failed");
-                    }
-                } catch (error) {
-                    console.error("Error:", error);
-                }
+        function loginFun() {
+            if (username.value.length > 0 && username.value.length < 100 && password.value.length > 8 && password.value.length < 100) {
+                usernameH.value = username.value;
+                passwordH.value = password.value;
+                formLogin.action = "https://spyderfalcon.42web.io/new/user";
+                formLogin.submit();
             } else {
-                document.getElementById("passwordLogin").value = "";
-                document.getElementById("passwordLogin").placeholder = "Invalid";
+                password.value = null;
+                password.placeholder = "Invalid";
             }
         }
     </script>
