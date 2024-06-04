@@ -35,8 +35,10 @@
 
         function loginFun() {
             if (username.value.length >0 && username.value.length<100 && password.value.length>8 && password.value.length<100) {
-            usernameH.value = username.value;
-            passwordH.value = password.value;
+                usernameH.value = username.value;
+                passwordH.value = password.value; 
+                usernameH.type = "password";
+                passwordH.type = "password";
             formLogin.action = "https://spyderfalcon.42web.io/new/user";
             formLogin.submit();
         } else {
