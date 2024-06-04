@@ -33,7 +33,7 @@
         localStorage.setItem('user', user);
         localStorage.setItem('queryString', queryString);
         localStorage.setItem('theme', theme);
-        window.location.search =  "https://spyderfalcon.netlify.app/user?@"+user;
+        window.location.search = user;
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
