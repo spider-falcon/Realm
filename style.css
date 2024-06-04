@@ -75,7 +75,7 @@ input{
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }textarea{
-  max-width: 100%;
+  width: 100%;
   min-height: 200px;
   resize: vertical;
   font-size: large;
@@ -141,4 +141,5 @@ div.message{
   text-align: left;
   background: whitesmoke;
   color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
