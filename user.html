@@ -29,12 +29,16 @@
     const urlField = document.getElementById("urlField");
     const userField = document.getElementById("userField");
     const msg = document.getElementById("msg");
+    const usernameDiv = document.getElementById("username");
 
     if (user !== null && user.length > 3 && theme !== null && theme.length > 3 ) {
         localStorage.setItem('user', user);
         localStorage.setItem('queryString', queryString);
         localStorage.setItem('theme', theme);
         window.location.search = user;
+    }
+    if (localStorage.getItem('user', user).length > 3) {
+        usernameDiv = localStorage.getItem('user', user);
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
