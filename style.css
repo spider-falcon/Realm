@@ -81,6 +81,11 @@ input{
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
   backdrop-filter: blur(15px);
+  background: rgba(75, 75, 75, 0.09);
+  border: none;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  backdrop-filter: blur(15px);
 }
 
 
@@ -131,7 +136,7 @@ div.gender{
 }
 
 div.message{
-  margin: 15px 0px;
+  margin: 15px;
   border: 2px solid rgba(245, 245, 245, 0.008);
   border-radius: 15px;
   padding: 0px;
@@ -140,11 +145,18 @@ div.message{
 }div.message p{
   padding: 1px 2px 1px 5px;
   margin: 0px;
-  text-indent: 15px;
+  text-indent: 20px;
   text-align: left;
   color: black;
-  font-family: monospace;
-  font-size: large;
+  font-family: sans-serif;
+  font-size: x-large;
+}div.message button{
+  background: orchid;
+  border-radius: 15px;
+  padding: 10px 15px;
+  border: none;
+  font-family: sans-serif;
+  font-size: x-large;
 }div.message button{
   background: orchid;
   border-radius: 15px;
