@@ -39,6 +39,7 @@
     }
     if (localStorage.getItem('user', user).length > 3) {
         username.innerText = localStorage.getItem('user', user);
+        document.title = localStorage.getItem('user', user);
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
