@@ -108,7 +108,7 @@ center.middle{
   max-width: 50%;
   padding: 0px 10px;
 }
-button#loginButton{
+button#loginButton,button#registerButton{
   padding: 5px;
   background: rgb(255, 255, 255);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
