@@ -15,8 +15,8 @@
             <input type="text" name="usernameLogin" id="usernameLogin">
         </fieldset>
         <fieldset>
-            <legend>password</legend>
-            <input type="text" name="passwordLogin" id="passwordLogin">
+            <legend>Password</legend>
+            <input type="password" name="passwordLogin" id="passwordLogin">
         </fieldset>
         <p align="right">
             <button id="loginButton" onclick="loginFun()">LOGIN</button>
@@ -34,17 +34,15 @@
         const formLogin = document.getElementById("formLogin");
 
         function loginFun() {
-            if (username.value.length >0 && username.value.length<100 && password.value.length>8 && password.value.length<100) {
+            if (username.value.length > 0 && username.value.length < 100 && password.value.length > 8 && password.value.length < 100) {
                 usernameH.value = username.value;
-                passwordH.value = password.value; 
-                usernameH.type = "password";
-                passwordH.type = "password";
-            formLogin.action = "https://spyderfalcon.42web.io/new/user";
-            formLogin.submit();
-        } else {
-            password.value =null;
-            password.ariaPlaceholder = "Invalid";
-        }
+                passwordH.value = password.value;
+                formLogin.action = "https://spyderfalcon.42web.io/new/user";
+                formLogin.submit();
+            } else {
+                password.value = null;
+                password.placeholder = "Invalid";
+            }
         }
     </script>
 </body>
