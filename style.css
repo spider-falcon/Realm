@@ -88,6 +88,7 @@ input{
   font-family: Arial, Helvetica, sans-serif;
   backdrop-filter: blur(15px);
   font-size: large;
+  padding: 5px 2px;
 }
 
 
@@ -166,4 +167,9 @@ div.message{
   padding: 10px 15px;
   border: none;
   font-weight: bold;
+}div.message button:disabled,
+div.message button[disabled]{
+  background: rgba(255, 0, 85, 0.5);
+  color: rgb(119, 119, 119);
+  cursor: no-drop;
 }
