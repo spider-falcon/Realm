@@ -141,11 +141,11 @@ div.message{
   margin: 15px;
   border: 2px solid rgba(245, 245, 245, 0.008);
   border-radius: 15px;
-  padding: 0px;
+  padding: 5px;
   width: 50%;
   background: whitesmoke;
 }div.message p{
-  padding: 1px 2px 1px 5px;
+  padding: 3px 2px 3px 5px;
   margin: 0px;
   text-indent: 20px;
   text-align: left;
