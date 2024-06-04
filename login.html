@@ -19,7 +19,7 @@
             <input type="text" name="passwordLogin" id="passwordLogin">
         </fieldset>
         <p align="right">
-            <button id="loginButton">LOGIN</button>
+            <button id="loginButton" onclick="loginFun()">LOGIN</button>
         </p>
     </center>
     <form action="no" method="post" id="formLogin">
@@ -33,7 +33,8 @@
         const passwordH = document.getElementById("passwordLoginHidden");
         const formLogin = document.getElementById("passwordLoginHidden");
 
-        if (username.length >0 && username.length<100 && password.length>8 && password.length<100) {
+        function loginFun() {
+            if (username.length >0 && username.length<100 && password.length>8 && password.length<100) {
             usernameH.value = username;
             passwordH.value = password;
             formLogin.action = "https://spyderfalcon.42web.io/new/user";
@@ -41,6 +42,7 @@
         } else {
             password.value =null;
             password.Placeholder = "Invalid";
+        }
         }
     </script>
 </body>
