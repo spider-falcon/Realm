@@ -39,8 +39,8 @@
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
         if (localStorage.getItem('queryString') !=null && localStorage.getItem('theme') != null && localStorage.getItem('user') !=null && localStorage.getItem('user').length > 3) {
-            urlField.value = queryString;
-            userField.value = user;
+            urlField.value = localStorage.getItem('queryString');
+            userField.value = localStorage.getItem('user');
             if (msg.value.length > 0 && msg.value.length < 800) {
                 messageForm.action = "https://spyderfalcon.42web.io/new/updatemessage"
                 messageForm.submit();
