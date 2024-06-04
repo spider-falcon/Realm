@@ -38,7 +38,7 @@
         window.location.search = user;
     }
     if (localStorage.getItem('user', user).length > 3) {
-        usernameDiv = localStorage.getItem('user', user);
+        usernameDiv.innerText = localStorage.getItem('user', user);
     }
     messageForm.addEventListener('submit',function (event) {
         event.preventDefault();
