@@ -39,6 +39,7 @@
     </center>
     <script>
 document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
     const usernameRegister = document.getElementById('usernameRegister');
     const password = document.getElementById('passwordRegister');
     const nameRegister = document.getElementById('nameRegister');
@@ -58,9 +59,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     if (password.value.length < 8 || checkInstagram(usernameRegister.value).length < 1 || checkInstagram(usernameRegister.value).length > 80 || nameRegister.value.length < 1 || nameRegister.value.length > 80 || (!maleGenderRegister.checked && !femaleGenderRegister.checked && !otherGenderRegister.checked)) {
         alert('Please fill the field');
-        event.preventDefault();
     } else {
-        event.preventDefault();
         console.log("Ready to submit");
         document.getElementById('registerForm').action = "https://spyderfalcon.42web.io/new/register";
         document.getElementById('registerForm').submit();
