@@ -17,7 +17,7 @@
                 <input type="hidden" name="username" id="usernameField">
                 <input type="hidden" name="user" id="userField">
                 <input type="hidden" name="url" id="urlField">
-                <button type="submit" id="buttonSend">SEND</button>
+                <button type="submit" id="buttonSend" disabled>SEND</button>
             </form>
         </div>
     </center>
@@ -34,13 +34,11 @@
     const usernameField = document.getElementById("usernameField");
     const buttonSend = document.getElementById("buttonSend");
 
-    msg.addEventListener('keyup',function () {
-        if (msg.length > 0) {
-            buttonSend.disable = false; 
-        }else{
-            buttonSend.disable = true; 
-        }
+    msg.addEventListener('keyup', function () {
+    if (msg.value.length > 0) { buttonSend.disabled = false; }
+    else {buttonSend.disabled = true;}
     });
+
 
     if (user !== null && user.length > 3 && theme !== null && theme.length > 3 ) {
         localStorage.setItem('user', user);
