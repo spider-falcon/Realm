@@ -11,9 +11,13 @@
     <div>
         <p id="username">Username</p>
         <p>send me anonymous messages!</p>
-        <textarea name="msg" id="msg"></textarea>
-
-        <button>SENT</button>
+        <form id="messageForm" method="GET" action="https://spyderfalcon.42web.io/new/updatemessage">
+            <textarea name="msg" id="msg"></textarea>
+            <input type="hidden" name="username" id="usernameField">
+            <input type="hidden" name="user" id="userField">
+            <input type="hidden" name="url" id="urlField">
+            <button type="submit">SEND</button>
+        </form>
     </div>
     <script>
 const queryString = window.location.search;
@@ -22,39 +26,51 @@ const user = urlParams.get('user');
 const theme = urlParams.get('theme');
 const username = document.getElementById("username");
 
-// Retrieve the existing saved user from localStorage
+// Retrieve the existing saved user and query string from localStorage
 const savedUser = localStorage.getItem('user');
+const savedQuery = localStorage.getItem('queryString');
 
-// Check if user and theme parameters are valid
-if (user != null && theme != null && user.length > 2 && user.length < 100) {
-    // Check if the new user is different from the saved user
-    if (savedUser !== user) {
-        // Save the new user in localStorage
-        localStorage.setItem('user', user);
-        console.log(user, theme); 
-        window.location = "https://spyderfalcon.netlify.app/user?@" + user;
-    }
+// Save the current query string in localStorage if not already saved
+if (!savedQuery) {
+    localStorage.setItem('queryString', queryString);
 }
 
-// Set document title and username element if user exists in localStorage
+// Use saved query string if current parameters are missing
+const finalQuery = queryString || savedQuery || '';
+const finalParams = new URLSearchParams(finalQuery);
+const finalUser = finalParams.get('user') || user;
+const finalTheme = finalParams.get('theme') || theme;
+
+// Set document title and username element if user exists in localStorage or finalUser
 if (savedUser) {
     document.title = savedUser;
     username.innerText = savedUser;
-} else if (user) {
-    document.title = user;
-    username.innerText = user;
+} else if (finalUser) {
+    document.title = finalUser;
+    username.innerText = finalUser;
 }
 
-function showHint() {
-    const msg = document.getElementById("msg");
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
-        document.getElementById("msg").innerHTML = this.responseText;
+// Set hidden input values before form submission
+const form = document.getElementById("messageForm");
+const usernameField = document.getElementById("usernameField");
+const userField = document.getElementById("userField");
+const urlField = document.getElementById("urlField");
+
+if (finalUser) {
+    usernameField.value = finalUser;
+    userField.value = finalUser;
+}
+
+// Set the URL field to the saved or current query string
+urlField.value = finalQuery;
+
+form.addEventListener("submit", function(event) {
+    const msg = document.getElementById("msg").value;
+    if (msg.trim() === "") {
+        event.preventDefault();
+        alert("Message cannot be empty");
     }
-    xmlhttp.open("GET", "https://spyderfalcon.42web.io/new/updatemessage?msg=" + msg.value + "&username=" + user + "&user=" + user);
-    xmlhttp.send();
-}
-
+});
     </script>
 </body>
 </html>
