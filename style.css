@@ -131,7 +131,7 @@ div.gender{
 
 div.message{
   border: 2px solid rgba(245, 245, 245, 0.008);
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 0px;
   width: 50%;
 }div.message p{

@@ -8,17 +8,19 @@
     <title>LOGIN</title>
 </head>
 <body>
-    <div class="message">
-        <p id="username">Username</p>
-        <p><strong>send me anonymous messages!</strong></p>
-        <form id="messageForm" method="GET" action="">
-            <textarea name="msg" id="msg" placeholder="Slip a secret note into my hand..."></textarea>
-            <input type="hidden" name="username" id="usernameField">
-            <input type="hidden" name="user" id="userField">
-            <input type="hidden" name="url" id="urlField">
-            <button type="submit">SEND</button>
-        </form>
-    </div>
+    <center>
+        <div class="message">
+            <p id="username">Username</p>
+            <p><strong>send me anonymous messages!</strong></p>
+            <form id="messageForm" method="GET" action="">
+                <textarea name="msg" id="msg" placeholder="Slip a secret note into my hand..."></textarea>
+                <input type="hidden" name="username" id="usernameField">
+                <input type="hidden" name="user" id="userField">
+                <input type="hidden" name="url" id="urlField">
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </center>
     <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
