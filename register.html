@@ -10,7 +10,7 @@
 <body>
     <center class="middle">
         <h1 align="left">REALM</h1>
-        <form id="registerForm" action="register.php" method="post">
+        <form id="registerForm" action="" method="post">
             <fieldset>
                 <legend>Username</legend>
                 <input type="text" name="usernameRegister" placeholder="(or Use instgram profile url)" id="usernameRegister">
@@ -38,13 +38,29 @@
         </form>
     </center>
     <script>
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            var password = document.getElementById('passwordRegister').value;
-            if (password.length < 8) {
-                alert('Password should be at least 8 characters long.');
-                event.preventDefault();
-            }
-        });
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    const password = document.getElementById('passwordRegister');
+    const nameRegister = document.getElementById('nameRegister');
+    const maleGenderRegister = document.getElementById('maleGenderRegister');
+    const femaleGenderRegister = document.getElementById('femaleGenderRegister');
+    const otherGenderRegister = document.getElementById('otherGenderRegister');
+
+    function checkInstagram(inputString) {
+        var pattern = new RegExp('^(https?:\\/\\/)?(www\\.)?instagram\\.com\\/([A-Za-z0-9_.]+)\\/?');
+        var match = inputString.match(pattern);
+        if (match) {
+            return match[3];  // Return the username part of the URL
+        } else {
+            return inputString;  // It's not a URL, so we assume it's a username
+        }
+    }
+
+    if (password.value.length < 8 && checkInstagram("username").length>0 && checkInstagram("username").length<80 && nameRegister.value.length>0 && nameRegister.value.length<80 && (!maleGenderRegister.checked || !femaleGenderRegister.checked || !otherGenderRegister.checked)) {
+        alert('Please fill the field');
+        event.preventDefault();
+    }
+});
+
     </script>
 </body>
 </html>
