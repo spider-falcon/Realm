@@ -66,7 +66,7 @@ input{
   border: 1px solid rgba(255, 255, 255, 0.7);
   outline: none;
   width: auto;
-}input[type="radio"]:active{
+}input[type="radio"]:active,input[type="radio"]:focus{
   accent-color: rgba(241, 44, 44, 0.7);
   border: 1px solid rgba(241, 44, 44, 0.7);
   outline: none;
@@ -118,4 +118,5 @@ button#loginButton,button#registerButton{
 }
 div.gender{
   display: flex;
+  text-align: left;
 }
