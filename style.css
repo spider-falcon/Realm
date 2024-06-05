@@ -111,6 +111,7 @@ div.topBar button,div.topBar a{
   border: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bolder;
+  padding: 5px;
 }
 div.topBar img{
   margin: auto;
@@ -187,5 +188,8 @@ div.message button[disabled]{
         width: 100%;
     }center.middle{
       max-width:90%;
+    }div.topBar{
+      margin:0px;
+      border-radius:0px 0px 10px 10px;
     }
 }
