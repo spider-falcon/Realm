@@ -185,5 +185,7 @@ div.message button[disabled]{
         width: 100%;
     }center{
         width: 100%;
+    }center.middle{
+      width:90%;
     }
 }
