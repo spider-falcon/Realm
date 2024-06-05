@@ -186,6 +186,8 @@ div.message button[disabled]{
   background:black;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: large;
+  color: white;
+  border-radius: 15px;
 }
 
 
