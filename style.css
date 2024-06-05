@@ -178,3 +178,12 @@ div.message button[disabled]{
   color: rgb(119, 119, 119);
   cursor: no-drop;
 }
+
+
+@media (max-width: 600px) {
+    div{
+        width: 100%;
+    }center{
+        width: 100%;
+    }
+}
